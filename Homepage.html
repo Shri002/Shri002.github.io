@@ -8,23 +8,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
   <style>
+
     @font-face {
       font-family: 'TTNormsPro';
-      src: url('css/TTNormsPro.woff2') format('woff2'),
-       url('css/TTNormsPro.woff') format('woff'),
-       url('css/TTNormsPro.ttf') format('truetype');
-      font-weight: 500; /* use number instead of "medium" */
+      src: url('/css/fonts/TTNormsPro-Medium.ttf') format('truetype');
+      font-weight: medium;
       font-style: normal;
-      font-display: swap;
     }
 
     @font-face {
       font-family: 'Ugly Dave';
-      src: url('css/UglyDaveRegular.otf') format('opentype');
-      font-weight: 400; /* normal = 400 */
+      src: url('/css/fonts/UglyDaveRegular.otf') format('opentype');
+      font-weight: normal;
       font-style: normal;
     }
-
+    
     * {
       box-sizing: border-box;
       max-width: 100%;
@@ -454,7 +452,6 @@
     scroll-margin-top: 140px; /* same as navbar height */
   }
 
-  /* MOBILE ONLY - phones and small devices (up to 767px) */
   @media (max-width: 767px) {
   .middle-links,
   .nav-links {
@@ -539,6 +536,8 @@
     opacity: 1;
     visibility: visible;
   }
+
+
 
   /* Mobile work card adjustments */
   .card {
@@ -719,202 +718,222 @@
     }
   }
 
-  /* ===== TABLETS AND ALL LARGER SCREENS - DESKTOP NAV (≥768px) ===== */
-  @media (min-width: 768px) {
-    /* Force desktop navigation on all screens 768px and larger */
-    .middle-links,
-    .nav-links {
-      display: flex !important; /* show desktop nav */
+    /* ===== Tablet (≥768px) ===== */
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .middle-links,
+      .nav-links {
+        display: none !important; /* hide normal nav */
+      }
+
+      .hamburger {
+        display: flex !important; /* show burger */
+      }
+
+      .mobile-menu {
+        display: flex !important; /* show mobile menu */
+      }
+
+      .nav-bar {
+        padding-right: 20px; /* reduce nav bar width */
+      }
+
+      .card {
+        width: 100%;
+        max-width: 600px;
+        height: 240px;
+        padding: 20px;
+        box-shadow: -12px 12px 0px #5564c9;
+      }
+
+      .card.red {
+        box-shadow: -12px 12px 0px #F8C6BC;
+      }
+
+      .card.green {
+        box-shadow: -12px 12px 0px #A8C2B3;
+      }
+
+      .card:active {
+        transform: translate(-12px, 12px);
+        box-shadow: 0px 0px 0px #5564c9;
+      }
+
+      .card.red:active {
+        box-shadow: 0px 0px 0px #F8C6BC;
+      }
+
+      .card.green:active {
+        box-shadow: 0px 0px 0px #A8C2B3;
+      }
+
+      .main-card-title {
+        font-size: 26px;
+        margin: 0 0 12px 0;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        line-height: 1.1;
+      }
+
+      .role-widget {
+        display: none;
+      }
+
+      .description-tool-container p {
+        font-size: 15px;
+        margin: 0 0 12px 0;
+        line-height: 1.3;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+      }
+
+      .work-card {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .work-pic {
+        display: none;
+      }
+
+      .answers-box {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-right: 20px;
+      }
+
+      .intro-header {
+        font-size: 36px;
+      }
+
+      .intro-header-sub {
+        font-size: 32px;
+      }
     }
 
-    .hamburger {
-      display: none !important; /* hide hamburger */
+    /* ===== Medium Desktop (1024px - 1199px) ===== */
+    @media (min-width: 1024px) and (max-width: 1199px) {
+      .hamburger {
+        display: none !important; /* hide hamburger on medium desktop */
+      }
+
+      .mobile-menu {
+        display: none !important; /* ensure mobile menu is hidden */
+      }
+
+      .mobile-overlay {
+        display: none !important; /* ensure overlay is hidden */
+      }
+
+      .middle-links,
+      .nav-links {
+        display: flex !important; /* show desktop nav */
+      }
+
+      .work-pic {
+        display: none;
+      }
+
+      .work-card {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .role-widget {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        margin-bottom: 12px;
+      }
+
+      .role-widget p {
+        font-size: 14px;
+        padding: 9px 15px;
+        margin: 0;
+      }
     }
 
-    .mobile-menu {
-      display: none !important; /* hide mobile menu */
+    /* ===== Small Desktop (≥1200px) ===== */
+    @media (min-width: 1200px) {
+      .hamburger {
+        display: none !important; /* hide hamburger on small desktop */
+      }
+
+      .mobile-menu {
+        display: none !important; /* ensure mobile menu is hidden */
+      }
+
+      .mobile-overlay {
+        display: none !important; /* ensure overlay is hidden */
+      }
+
+      .middle-links,
+      .nav-links {
+        display: flex !important; /* show desktop nav */
+      }
+
+      .work-pic {
+        display: flex;
+      }
+
+      .work-card {
+        grid-template-columns: auto 1fr;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .role-widget {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        margin-bottom: 15px;
+      }
+
+      .role-widget p {
+        font-size: 15px;
+        padding: 10px 16px;
+        margin: 0;
+      }
     }
 
-    .mobile-overlay {
-      display: none !important; /* hide overlay */
-    }
-  }
+    /* ===== Large Desktop (≥1440px) ===== */
+    @media (min-width: 1440px) {
+      .card {
+        width: 100%;
+        max-width: 900px;
+        height: 280px;
+        padding: 35px;
+      }
 
-  /* ===== Tablet specific styles (768px - 1023px) ===== */
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .card {
-      width: 100%;
-      max-width: 600px;
-      height: 240px;
-      padding: 20px;
-      box-shadow: -12px 12px 0px #5564c9;
-    }
+      .main-card-title {
+        font-size: 42px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        line-height: 1.1;
+      }
 
-    .card.red {
-      box-shadow: -12px 12px 0px #F8C6BC;
-    }
+      .role-widget p {
+        font-size: 16px;
+        padding: 12px 20px;
+      }
 
-    .card.green {
-      box-shadow: -12px 12px 0px #A8C2B3;
-    }
+      .description-tool-container p {
+        font-size: 22px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        line-height: 1.3;
+      }
 
-    .card:active {
-      transform: translate(-12px, 12px);
-      box-shadow: 0px 0px 0px #5564c9;
-    }
-
-    .card.red:active {
-      box-shadow: 0px 0px 0px #F8C6BC;
-    }
-
-    .card.green:active {
-      box-shadow: 0px 0px 0px #A8C2B3;
-    }
-
-    .main-card-title {
-      font-size: 26px;
-      margin: 0 0 12px 0;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-      hyphens: auto;
-      line-height: 1.1;
+      .work-pic img {
+        width: 250px;
+        height: auto;
+      }
     }
 
-    .role-widget {
-      display: none;
-    }
-
-    .description-tool-container p {
-      font-size: 15px;
-      margin: 0 0 12px 0;
-      line-height: 1.3;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-      hyphens: auto;
-    }
-
-    .work-card {
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-
-    .work-pic {
-      display: none;
-    }
-
-    .answers-box {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      margin-right: 20px;
-    }
-
-    .intro-header {
-      font-size: 36px;
-    }
-
-    .intro-header-sub {
-      font-size: 32px;
-    }
-  }
-
-  /* ===== Medium Desktop (1024px - 1199px) ===== */
-  @media (min-width: 1024px) and (max-width: 1199px) {
-    .work-pic {
-      display: none;
-    }
-
-    .work-card {
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-
-    .role-widget {
-      display: flex;
-      flex-direction: row;
-      gap: 10px;
-      margin-bottom: 12px;
-    }
-
-    .role-widget p {
-      font-size: 14px;
-      padding: 9px 15px;
-      margin: 0;
-    }
-  }
-
-  /* ===== Small Desktop (≥1200px) ===== */
-  @media (min-width: 1200px) {
-    .work-pic {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .work-pic img {
-      height: 260px; /* Match default card height */
-      width: auto; /* Keep original width proportions */
-      object-fit: cover;
-      border-radius: 15px;
-    }
-
-    .work-card {
-      grid-template-columns: auto 1fr;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .role-widget {
-      display: flex;
-      flex-direction: row;
-      gap: 15px;
-      margin-bottom: 15px;
-    }
-
-    .role-widget p {
-      font-size: 15px;
-      padding: 10px 16px;
-      margin: 0;
-    }
-  }
-
-  /* ===== Large Desktop (≥1440px) ===== */
-  @media (min-width: 1440px) {
-    .card {
-      width: 100%;
-      max-width: 900px;
-      height: 280px;
-      padding: 35px;
-    }
-
-    .work-pic img {
-      height: 280px; /* Match large desktop card height */
-      width: auto; /* Keep original width proportions */
-      object-fit: cover;
-      border-radius: 20px;
-    }
-
-    .main-card-title {
-      font-size: 42px;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-      hyphens: auto;
-      line-height: 1.1;
-    }
-
-    .role-widget p {
-      font-size: 16px;
-      padding: 12px 20px;
-    }
-
-    .description-tool-container p {
-      font-size: 22px;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-      hyphens: auto;
-      line-height: 1.3;
-    }
-  }
   </style>
 
 </head>
