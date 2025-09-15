@@ -13,7 +13,7 @@
       src: url('css/TTNormsPro-Medium.woff2') format('woff2'),
           url('css/TTNormsPro-Medium.woff') format('woff'),
           url('css/TTNormsPro-Medium.ttf') format('truetype');
-      font-weight: 400;
+      font-weight: 500;
       font-style: normal;
       font-display: swap;
     }
@@ -269,12 +269,12 @@
   .card {
     width: 100%;
     max-width: 800px;
-    height: 260px;
+    min-height: 260px;
+    height: 100%;
     background: white;
     border-radius: 20px;
-    padding: 30px 30px; 
+    padding: 30px 55px; 
     border: 2px solid black;
-    margin-bottom: 20px;
     text-align: left;  
     font-family: "TT Norms Pro";
     display: flex;
@@ -338,15 +338,24 @@
   .work-total {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 60px;
     align-items: flex-start;   /* keep items anchored */
     justify-content: flex-start;
   }
 
   .work-card{
     display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto auto;
+    grid-template-columns: 67% 33%;
+    align-items: stretch; /* make card + image equal height */
+    gap: 5px;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
+
+  .work-card button {
+    width: 100%;
+    height: 100%;
   }
 
   .top-card-portion{
@@ -403,10 +412,19 @@
   }
 
   .work-pic{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px;
   }
+
+  .work-pic img {
+    min-height: 275px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* fills space without distortion */
+  }
+
 
   .intro-container.past-work{
     gap: 0px 0px;
@@ -464,18 +482,10 @@
         src: url('css/TTNormsPro.woff2') format('woff2'),
         url('css/TTNormsPro.woff') format('woff'),
         url('css/TTNormsPro.ttf') format('truetype');
-        font-weight: 400; /* use number instead of "medium" */
+        font-weight: 500; /* use number instead of "medium" */
         font-style: normal;
         font-display: swap;
       }
-
-      @font-face {
-        font-family: 'Ugly Dave';
-        src: url('css/UglyDaveRegular.otf') format('opentype');
-        font-weight: 400; /* normal = 400 */
-        font-style: normal;
-      }
-
   .middle-links,
   .nav-links {
     display: none !important; /* hide normal nav */
@@ -667,16 +677,9 @@
         src: url('css/TTNormsPro.woff2') format('woff2'),
         url('css/TTNormsPro.woff') format('woff'),
         url('css/TTNormsPro.ttf') format('truetype');
-        font-weight: 400; /* use number instead of "medium" */
+        font-weight: 500; /* use number instead of "medium" */
         font-style: normal;
         font-display: swap;
-      }
-
-      @font-face {
-        font-family: 'Ugly Dave';
-        src: url('css/UglyDaveRegular.otf') format('opentype');
-        font-weight: 400; /* normal = 400 */
-        font-style: normal;
       }
 
     .card {
@@ -763,16 +766,9 @@
       src: url('css/TTNormsPro.woff2') format('woff2'),
        url('css/TTNormsPro.woff') format('woff'),
        url('css/TTNormsPro.ttf') format('truetype');
-      font-weight: 400; /* use number instead of "medium" */
+      font-weight: 500; /* use number instead of "medium" */
       font-style: normal;
       font-display: swap;
-    }
-
-    @font-face {
-      font-family: 'Ugly Dave';
-      src: url('css/UglyDaveRegular.otf') format('opentype');
-      font-weight: 400; /* normal = 400 */
-      font-style: normal;
     }
 
     /* Force desktop navigation on all screens 768px and larger */
@@ -801,16 +797,9 @@
       src: url('css/TTNormsPro.woff2') format('woff2'),
        url('css/TTNormsPro.woff') format('woff'),
        url('css/TTNormsPro.ttf') format('truetype');
-      font-weight: 400; /* use number instead of "medium" */
+      font-weight: 500; /* use number instead of "medium" */
       font-style: normal;
       font-display: swap;
-    }
-
-    @font-face {
-      font-family: 'Ugly Dave';
-      src: url('css/UglyDaveRegular.otf') format('opentype');
-      font-weight: 400; /* normal = 400 */
-      font-style: normal;
     }
 
     .card {
@@ -889,154 +878,52 @@
     }
   }
 
+  
   /* ===== Medium Desktop (1024px - 1199px) ===== */
   @media (min-width: 1024px) and (max-width: 1199px) {
-      @font-face {
-      font-family: 'TT Norms Pro';
-      src: url('css/TTNormsPro.woff2') format('woff2'),
-       url('css/TTNormsPro.woff') format('woff'),
-       url('css/TTNormsPro.ttf') format('truetype');
-      font-weight: 400; /* use number instead of "medium" */
-      font-style: normal;
-      font-display: swap;
-    }
-
-    @font-face {
-      font-family: 'Ugly Dave';
-      src: url('css/UglyDaveRegular.otf') format('opentype');
-      font-weight: 400; /* normal = 400 */
-      font-style: normal;
-    }
-
-    .work-pic {
-      display: none;
-    }
-
-    .work-card {
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-
-    .role-widget {
-      display: flex;
-      flex-direction: row;
-      gap: 10px;
-      margin-bottom: 12px;
-    }
-
-    .role-widget p {
-      font-size: 14px;
-      padding: 9px 15px;
-      margin: 0;
-    }
+      .main-card-title { font-size: 32px; }
+      .role-widget p   { font-size: 14px; padding: 8px 14px; }
+      .description-tool-container p { font-size: 16px; }
   }
-
-  /* ===== Small Desktop (≥1200px) ===== */
-  @media (min-width: 1200px) {
-    @font-face {
-      font-family: 'TT Norms Pro';
-      src: url('css/TTNormsPro.woff2') format('woff2'),
-       url('css/TTNormsPro.woff') format('woff'),
-       url('css/TTNormsPro.ttf') format('truetype');
-      font-weight: 400; /* use number instead of "medium" */
-      font-style: normal;
-      font-display: swap;
-    }
-
-    @font-face {
-      font-family: 'Ugly Dave';
-      src: url('css/UglyDaveRegular.otf') format('opentype');
-      font-weight: 400; /* normal = 400 */
-      font-style: normal;
-    }
-
-    .work-pic {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .work-pic img {
-      height: 260px; /* Match default card height */
-      width: auto; /* Keep original width proportions */
-      object-fit: cover;
-      border-radius: 15px;
-    }
-
-    .work-card {
-      grid-template-columns: auto 1fr;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .role-widget {
-      display: flex;
-      flex-direction: row;
-      gap: 15px;
-      margin-bottom: 15px;
-    }
-
-    .role-widget p {
-      font-size: 15px;
-      padding: 10px 16px;
-      margin: 0;
-    }
-  }
+ 
 
   /* ===== Large Desktop (≥1440px) ===== */
-  @media (min-width: 1440px) {
+  @media (min-width: 1440px) and (max-width: 1679px){
     @font-face {
       font-family: 'TT Norms Pro';
       src: url('css/TTNormsPro.woff2') format('woff2'),
        url('css/TTNormsPro.woff') format('woff'),
        url('css/TTNormsPro.ttf') format('truetype');
-      font-weight: 400; /* use number instead of "medium" */
+      font-weight: 500; /* use number instead of "medium" */
       font-style: normal;
       font-display: swap;
     }
-
-    @font-face {
-      font-family: 'Ugly Dave';
-      src: url('css/UglyDaveRegular.otf') format('opentype');
-      font-weight: 400; /* normal = 400 */
-      font-style: normal;
-    }
-
-    .card {
-      width: 100%;
-      max-width: 800px;
-      height: 280px;
-      padding: 35px;
-    }
-
-    .work-pic img {
-      height: 280px; /* Match large desktop card height */
-      width: auto; /* Keep original width proportions */
-      object-fit: cover;
-      border-radius: 20px;
-    }
-
-    .main-card-title {
-      font-size: 42px;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-      hyphens: auto;
-      line-height: 1.1;
-    }
-
-    .role-widget p {
-      font-size: 16px;
-      padding: 12px 20px;
-    }
-
-    .description-tool-container p {
-      font-size: 22px;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-      hyphens: auto;
-      line-height: 1.3;
-    }
+    .main-card-title { font-size: 40px; }
+    .role-widget p   { font-size: 16px; padding: 12px 18px; }
+    .description-tool-container p { font-size: 20px; }
   }
+
+    /* 1680–1919px */
+  @media (min-width: 1680px) and (max-width: 1919px) {
+    .main-card-title { font-size: 44px; }
+    .role-widget p   { font-size: 17px; padding: 14px 20px; }
+    .description-tool-container p { font-size: 22px; }
+  }
+
+  /* 1920–2559px */
+  @media (min-width: 1920px) and (max-width: 2559px) {
+    .main-card-title { font-size: 48px; }
+    .role-widget p   { font-size: 18px; padding: 15px 22px; }
+    .description-tool-container p { font-size: 24px; }
+  }
+
+  /* Ultra-wide ≥2560px */
+  @media (min-width: 2560px) {
+    .main-card-title { font-size: 54px; }
+    .role-widget p   { font-size: 20px; padding: 16px 24px; }
+    .description-tool-container p { font-size: 26px; }
+  }
+  
   </style>
 
 </head>
